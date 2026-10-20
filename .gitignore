@@ -1,0 +1,13 @@
+# data, weights and environments are re-created on each machine
+data/
+checkpoints/
+.venv/
+.venvs/
+__pycache__/
+*.pth
+*.pt
+*.flv
+*.mp4
+*.mov
+logs/*.out
+.DS_Store

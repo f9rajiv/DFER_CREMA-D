@@ -1,0 +1,3 @@
+[submodule "third_party/DFER-CLIP"]
+	path = third_party/DFER-CLIP
+	url = https://github.com/zengqunzhao/DFER-CLIP
