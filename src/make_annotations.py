@@ -93,8 +93,13 @@ def main() -> None:
                  .reset_index(drop=True))
         print(f"note: {duplicated} existed in two formats; kept the .flv version")
 
-    if args.summary_csv and args.summary_csv.exists():
-        table = table.merge(load_human_votes(args.summary_csv), on="clip_id", how="left")
+    if args.summary_csv:
+        if args.summary_csv.exists():
+            table = table.merge(load_human_votes(args.summary_csv), on="clip_id", how="left")
+            print(f"human FaceVote ratings added for "
+                  f"{table['human_face_vote'].notna().sum()} of {len(table)} clips")
+        else:
+            print(f"WARNING: {args.summary_csv} not found, so no human ratings were added")
 
     out_csv.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(out_csv, index=False)

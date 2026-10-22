@@ -23,10 +23,24 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("result_csv", type=Path)
+    parser.add_argument("--annotations", type=Path,
+                        default=data_dir() / "annotations" / "crema_d.csv",
+                        help="used to add human ratings if the result CSV has none")
     parser.add_argument("--out_dir", type=Path, default=None)
     args = parser.parse_args()
 
     results = pd.read_csv(args.result_csv)
+    # Results made before the human ratings were in the annotations: add them now.
+    has_votes = "human_face_vote" in results.columns and results["human_face_vote"].notna().any()
+    if not has_votes and args.annotations.exists():
+        annotations = pd.read_csv(args.annotations)
+        if "human_face_vote" in annotations.columns:
+            results = (results.drop(columns=["human_face_vote", "human_face_agreement"], errors="ignore")
+                       .merge(annotations[["clip_id", "human_face_vote", "human_face_agreement"]],
+                              on="clip_id", how="left"))
+    if "human_face_vote" not in results.columns or results["human_face_vote"].isna().all():
+        print("note: no human ratings available; run make_annotations.py with --summary_csv\n")
+        
     results["correct"] = results["pred_6"] == results["label"]
     results["emotion_name"] = results["label"].map(lambda i: CLASS_NAMES_7[i])
     out_dir = args.out_dir or args.result_csv.parent / "analysis" / args.result_csv.stem

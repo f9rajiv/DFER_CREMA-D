@@ -43,3 +43,13 @@ fi
 cd "${CREMA_DIR}"
 git lfs pull --include="VideoFlash/*"
 echo "videos: $(find VideoFlash -name '*.flv' -size +1k | wc -l) of 7442"
+
+
+# 4. Human ratings (FaceVote etc.). Not in the GitLab mirror, so take them from
+#    the official GitHub repository.
+mkdir -p processedResults
+if [ ! -s processedResults/summaryTable.csv ]; then
+    wget -O processedResults/summaryTable.csv \
+        https://raw.githubusercontent.com/CheyneyComputerScience/CREMA-D/master/processedResults/summaryTable.csv
+fi
+echo "human ratings: $(($(wc -l < processedResults/summaryTable.csv) - 1)) rows"
