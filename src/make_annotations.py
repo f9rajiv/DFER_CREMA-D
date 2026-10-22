@@ -80,6 +80,19 @@ def main() -> None:
         raise SystemExit(f"no videos found in {args.video_dir}")
     table = pd.DataFrame(rows)
 
+
+    # CREMA-D ships one clip twice (1015_DFA_ANG_XX as .flv and .mp4).
+    # Keep one file per clip, preferring the .flv version like all other clips.
+    duplicated = sorted(table.loc[table["clip_id"].duplicated(), "clip_id"])
+    if duplicated:
+        table["is_flv"] = table["video_path"].str.endswith(".flv")
+        table = (table.sort_values("is_flv", ascending=False)
+                 .drop_duplicates("clip_id", keep="first")
+                 .drop(columns="is_flv")
+                 .sort_values("clip_id")
+                 .reset_index(drop=True))
+        print(f"note: {duplicated} existed in two formats; kept the .flv version")
+
     if args.summary_csv and args.summary_csv.exists():
         table = table.merge(load_human_votes(args.summary_csv), on="clip_id", how="left")
 
