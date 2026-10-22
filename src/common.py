@@ -45,11 +45,16 @@ def add_dfer_clip_to_path() -> None:
         if str(path) not in sys.path:
             sys.path.insert(0, str(path))
 
-    # Their clip.py does `from pkg_resources import packaging`; pkg_resources is
-    # gone from recent setuptools, so provide the one attribute it uses.
+    # Their clip.py does `from pkg_resources import packaging`. pkg_resources is
+    # gone from recent setuptools: either missing entirely (ImportError), or left
+    # behind as an empty folder that imports but has no `packaging` (seen on
+    # Roihu-GPU). In both cases provide a stand-in with the one attribute it uses.
     try:
-        import pkg_resources  # noqa: F401
+        import pkg_resources  # noqa: F401  # type: ignore
+        usable = hasattr(pkg_resources, "packaging")
     except ImportError:
+        usable = False
+    if not usable:
         import packaging
         import packaging.version  # noqa: F401
 
