@@ -1,0 +1,22 @@
+{
+  "run_name": "dfew_fold4__facs",
+  "checkpoint": "/scratch/project_2020210/rsah/dfer_crema/checkpoints/dfew_fold4.pth",
+  "prompt_set": "facs",
+  "prompts": [
+    "raised cheeks, lip corners pulled up, and wrinkles at the outer corners of the eyes.",
+    "inner corners of the eyebrows raised and drawn together, lip corners pulled down, and a raised chin.",
+    "no facial muscle movement, with eyebrows, eyelids, cheeks and lips at rest.",
+    "eyebrows lowered and drawn together, upper eyelids raised, lower eyelids tightened, and lips pressed together.",
+    "inner and outer eyebrows raised, upper eyelids raised wide, and the jaw dropped open.",
+    "a wrinkled nose, a raised upper lip, and lip corners pulled down.",
+    "eyebrows raised and drawn together, upper eyelids raised, lower eyelids tensed, lips stretched sideways, and the jaw dropped."
+  ],
+  "clips": 7442,
+  "skipped_clips": 0,
+  "device": "cuda",
+  "seconds": 32.4,
+  "torch": "2.13.0+cu130",
+  "python": "3.12.14",
+  "host": "rg1109",
+  "finished_utc": "2026-10-22T22:55:11+00:00"
+}

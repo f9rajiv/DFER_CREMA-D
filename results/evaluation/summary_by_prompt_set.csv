@@ -1,0 +1,15 @@
+,,WAR,WAR,WAR,UAR,UAR,UAR
+,,mean,std,count,mean,std,count
+mode,prompt_set,,,,,,
+6-class,class_descriptor,40.29,0.67,5,41.58,0.66,5
+6-class,class_names,40.99,2.06,5,41.89,2.36,5
+6-class,class_names_with_context,42.03,4.0,5,42.78,4.13,5
+6-class,facs,37.75,5.21,5,38.95,4.85,5
+6-class,other_llm,38.55,3.15,5,39.89,3.01,5
+6-class,shuffled,37.61,6.0,5,38.6,5.94,5
+7-class,class_descriptor,38.91,0.92,5,40.19,0.88,5
+7-class,class_names,39.87,1.25,5,40.71,1.64,5
+7-class,class_names_with_context,41.03,4.04,5,41.73,4.18,5
+7-class,facs,37.59,5.16,5,38.78,4.8,5
+7-class,other_llm,38.41,3.04,5,39.75,2.9,5
+7-class,shuffled,37.52,5.91,5,38.51,5.83,5

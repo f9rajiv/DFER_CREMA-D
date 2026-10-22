@@ -1,0 +1,22 @@
+{
+  "run_name": "dfew_fold1__class_names_with_context",
+  "checkpoint": "/scratch/project_2020210/rsah/dfer_crema/checkpoints/dfew_fold1.pth",
+  "prompt_set": "class_names_with_context",
+  "prompts": [
+    "an expression of happiness.",
+    "an expression of sadness.",
+    "an expression of neutral.",
+    "an expression of anger.",
+    "an expression of surprise.",
+    "an expression of disgust.",
+    "an expression of fear."
+  ],
+  "clips": 7442,
+  "skipped_clips": 0,
+  "device": "cuda",
+  "seconds": 33.6,
+  "torch": "2.13.0+cu130",
+  "python": "3.12.14",
+  "host": "rg1105",
+  "finished_utc": "2026-10-22T22:17:21+00:00"
+}

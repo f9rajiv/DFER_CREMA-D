@@ -1,0 +1,22 @@
+{
+  "run_name": "dfew_fold5__other_llm",
+  "checkpoint": "/scratch/project_2020210/rsah/dfer_crema/checkpoints/dfew_fold5.pth",
+  "prompt_set": "other_llm",
+  "prompts": [
+    "upturned corners of the mouth, visible teeth, round raised cheeks, and creases around the eyes.",
+    "downturned lips, a trembling chin, heavy lowered eyelids, and eyebrows angled up in the middle.",
+    "a closed relaxed mouth, a steady gaze, level eyebrows, and no visible tension in the face.",
+    "a lowered knitted brow, a hard stare, compressed lips, and a clenched jaw.",
+    "high curved eyebrows, wide open eyes, a dropped jaw, and horizontal forehead lines.",
+    "a crinkled nose, a raised upper lip, squinted eyes, and the head turned slightly away.",
+    "wide tense eyes, raised and pinched eyebrows, lips stretched back toward the ears, and the head pulled back."
+  ],
+  "clips": 7442,
+  "skipped_clips": 0,
+  "device": "cuda",
+  "seconds": 33.2,
+  "torch": "2.13.0+cu130",
+  "python": "3.12.14",
+  "host": "rg1109",
+  "finished_utc": "2026-10-22T23:00:23+00:00"
+}

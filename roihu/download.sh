@@ -40,8 +40,13 @@ CREMA_DIR="${DFER_DATA_DIR}/raw/CREMA-D"
 if [ ! -d "${CREMA_DIR}" ]; then
     GIT_LFS_SKIP_SMUDGE=1 git clone https://gitlab.com/cs-cooper-lab/crema-d-mirror.git "${CREMA_DIR}"
 fi
+
 cd "${CREMA_DIR}"
-git lfs pull --include="VideoFlash/*"
+# Skip if the videos are already here: after the cleanup (deleting .git/lfs/objects)
+# git lfs would otherwise download all of them again.
+if [ "$(find VideoFlash -name '*.flv' -size +1k | wc -l)" -lt 7442 ]; then
+    git lfs pull --include="VideoFlash/*"
+fi
 echo "videos: $(find VideoFlash -name '*.flv' -size +1k | wc -l) of 7442"
 
 

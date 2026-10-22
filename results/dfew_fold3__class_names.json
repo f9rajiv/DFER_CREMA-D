@@ -1,0 +1,22 @@
+{
+  "run_name": "dfew_fold3__class_names",
+  "checkpoint": "/scratch/project_2020210/rsah/dfer_crema/checkpoints/dfew_fold3.pth",
+  "prompt_set": "class_names",
+  "prompts": [
+    "happiness.",
+    "sadness.",
+    "neutral.",
+    "anger.",
+    "surprise.",
+    "disgust.",
+    "fear."
+  ],
+  "clips": 7442,
+  "skipped_clips": 0,
+  "device": "cuda",
+  "seconds": 33.1,
+  "torch": "2.13.0+cu130",
+  "python": "3.12.14",
+  "host": "rg1109",
+  "finished_utc": "2026-10-22T22:49:14+00:00"
+}

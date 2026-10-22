@@ -1,0 +1,22 @@
+{
+  "run_name": "dfew_fold2__shuffled",
+  "checkpoint": "/scratch/project_2020210/rsah/dfer_crema/checkpoints/dfew_fold2.pth",
+  "prompt_set": "shuffled",
+  "prompts": [
+    "tears, a downward turned mouth, drooping upper eyelids, and a wrinkled forehead.",
+    "relaxed facial muscles, a straight mouth, a smooth forehead, and unremarkable eyebrows.",
+    "furrowed eyebrows, narrow eyes, tightened lips, and flared nostrils.",
+    "widened eyes, an open mouth, raised eyebrows, and a frozen expression.",
+    "a wrinkled nose, lowered eyebrows, a tightened mouth, and narrow eyes.",
+    "raised eyebrows, parted lips, a furrowed brow, and a retracted chin.",
+    "a smiling mouth, raised cheeks, wrinkled eyes, and arched eyebrows."
+  ],
+  "clips": 7442,
+  "skipped_clips": 0,
+  "device": "cuda",
+  "seconds": 33.2,
+  "torch": "2.13.0+cu130",
+  "python": "3.12.14",
+  "host": "rg1109",
+  "finished_utc": "2026-10-22T22:47:45+00:00"
+}
