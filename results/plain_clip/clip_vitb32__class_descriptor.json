@@ -1,0 +1,18 @@
+{
+  "model": "OpenAI CLIP ViT-B/32, no DFER-CLIP training",
+  "prompt_set": "class_descriptor",
+  "prompts": [
+    "a smiling mouth, raised cheeks, wrinkled eyes, and arched eyebrows.",
+    "tears, a downward turned mouth, drooping upper eyelids, and a wrinkled forehead.",
+    "relaxed facial muscles, a straight mouth, a smooth forehead, and unremarkable eyebrows.",
+    "furrowed eyebrows, narrow eyes, tightened lips, and flared nostrils.",
+    "widened eyes, an open mouth, raised eyebrows, and a frozen expression.",
+    "a wrinkled nose, lowered eyebrows, a tightened mouth, and narrow eyes.",
+    "raised eyebrows, parted lips, a furrowed brow, and a retracted chin."
+  ],
+  "clips": 7442,
+  "device": "cuda",
+  "encode_seconds": 41.8,
+  "torch": "2.13.0+cu130",
+  "finished_utc": "2026-10-22T23:30:26+00:00"
+}

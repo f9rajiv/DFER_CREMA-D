@@ -1,0 +1,18 @@
+{
+  "model": "OpenAI CLIP ViT-B/32, no DFER-CLIP training",
+  "prompt_set": "clip_template",
+  "prompts": [
+    "a photo of a face showing happiness.",
+    "a photo of a face showing sadness.",
+    "a photo of a face showing neutral.",
+    "a photo of a face showing anger.",
+    "a photo of a face showing surprise.",
+    "a photo of a face showing disgust.",
+    "a photo of a face showing fear."
+  ],
+  "clips": 7442,
+  "device": "cuda",
+  "encode_seconds": 41.8,
+  "torch": "2.13.0+cu130",
+  "finished_utc": "2026-10-22T23:30:26+00:00"
+}
