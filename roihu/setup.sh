@@ -12,12 +12,16 @@ source "${DFER_VENV}/bin/activate"
 pip install --upgrade pip
 pip install -r requirements_roihu.txt
 
+# CSC's CPU module ships its own OpenCV build without cv2.data (the face detector
+# files). Install the standard wheel into our venv so it takes priority.
+pip install --ignore-installed --no-deps "opencv-python-headless>=4.8,<5"
+
 mkdir -p "${DFER_DATA_DIR}"/{annotations,frames,results,checkpoints,clip_weights,raw}
 
 python - <<'PY'
 import cv2, torch
 print("torch", torch.__version__, "| CUDA build", torch.version.cuda, "| opencv", cv2.__version__)
-print("Haar face detector available:", hasattr(cv2, "CascadeClassifier"))
+print("Haar face detector available:", hasattr(cv2, "CascadeClassifier") and hasattr(cv2, "data"))
 PY
 echo "venv ready: ${DFER_VENV}"
 echo "data dir:   ${DFER_DATA_DIR}"
