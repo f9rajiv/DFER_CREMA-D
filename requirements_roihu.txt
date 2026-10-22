@@ -1,0 +1,12 @@
+# Installed on top of CSC's python-pytorch module (which provides torch, torchvision, numpy).
+einops
+ftfy
+regex
+opencv-python-headless>=4.8,<5
+pandas
+scikit-learn
+matplotlib
+tqdm
+packaging
+pillow
+gdown
